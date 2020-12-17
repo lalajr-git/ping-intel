@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+/* Adding a custom property to the root scope of the primary color */
+
+:root {
+    --primary-color: #3a4052;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    /*Recommended*/
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.showcase {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--primary-color url('/img/bgimg/LandingBG.png') no-repeat center center/cover);
+}
+
+.video-container:after {
+    content: '';
+    /*We need this property even if left blank*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Basically its like a ghost element that we put between video container and the video for the overlay */
+}
+
+/* If two positioned elements overlap without a z-index specified, the element positioned last in the HTML code will be shown on top. */
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Video will adjust itself if we resize the window */
+}
+
+.content {
+    z-index: 2;
+}
+
+.myself {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+}
+
+.branding {
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+.intro>.cursor-effect {
+    border-right: 0.1rem solid white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 25px;
+    opacity: 0.7;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+/* For iPad */
+
+@media only screen and (max-width: 768px) {
+    .myself {
+        font-size: 34px;
+    }
+}
+
+/* For iPhone 6/7/8 Plus */
+
+@media only screen and (max-width: 414px) {
+    .myself {
+        font-size: 18px;
+    }
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+/* For iPhone 6/7/8 and iPhone X */
+
+@media only screen and (max-width: 375px) {
+    .myself {
+        font-size: 19px;
+    }
+    .btn {
+        margin-top: 18px;
+    }
+}
+
+/* For iPhone 5/SE */
+
+@media only screen and (max-width: 320px) {
+    .myself {
+        font-size: 16px;
+    }
+    .btn {
+        margin-top: 16px;
+    }
+}
