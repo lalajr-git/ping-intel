@@ -2,201 +2,229 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="From Data Communications & Networking to building and developing a Website, with the fun of Programming Languages. There's something of everything here.">
-    <meta name="keywords"
-        content="ping, intelligence, pinging, intel, javed, siddiqui, lala, lala jr, tutorial, tutorials, lab, labs, configuration, config, beginners, hindi, urdu, english, cisco, ccna, ccnp, ccie, networking, internet, network, networks, data, communications, ip, ipv4, ipv6, routing, switching, security, bgp, eigrp, ospf, isis, protocols, mpls, vpn, stp, spanning-tree, spanning tree, vlan, acl, acls, access, control, list, lists, port, port security, port-security, dhcp, snooping, dhcp snooping, dynamic, dynamic arp inspection, microsoft, windows, windows7, windows10, linux, unix, kali, kali linux, parrot, parrot os, ubuntu, ethical, hacker, hacking, ethical hacking, penetration, testing, exploitations, exploits, system, admin, administrator, administration, web, website, design, designing, designer, developer, development, html, html5, css, css3, javascript, php, php3, program, programme, programmer, programming, language, languages, code, coding, coder, white, hat, junior, jr, python, automation, java, dotnet, asp.net, c#, c++, c programming language, packet tracer, gns3, gns3 vm, virtual, virtual box, vmware, workstation, atom, pycharm, visual studio, visual studio code,">
-    <meta name="robots" content="INDEX, FOLLOW">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="https://kit.fontawesome.com/3d476d9e16.js" crossorigin="anonymous"></script>
-    <title>Ping Intelligence - Inspiring Minds</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="From Data Communications & Networking to building and developing a Website, with the fun of Programming Languages. There's something of everything here.">
+  <meta name="keywords"
+    content="ping, intelligence, pinging, intel, javed, siddiqui, lala, lala jr, tutorial, tutorials, lab, labs, configuration, config, beginners, hindi, urdu, english, cisco, ccna, ccnp, ccie, networking, internet, network, networks, data, communications, ip, ipv4, ipv6, routing, switching, security, bgp, eigrp, ospf, isis, protocols, mpls, vpn, stp, spanning-tree, spanning tree, vlan, acl, acls, access, control, list, lists, port, port security, port-security, dhcp, snooping, dhcp snooping, dynamic, dynamic arp inspection, microsoft, windows, windows7, windows10, linux, unix, kali, kali linux, parrot, parrot os, ubuntu, ethical, hacker, hacking, ethical hacking, penetration, testing, exploitations, exploits, system, admin, administrator, administration, web, website, design, designing, designer, developer, development, html, html5, css, css3, javascript, php, php3, program, programme, programmer, programming, language, languages, code, coding, coder, white, hat, junior, jr, python, automation, java, dotnet, asp.net, c#, c++, c programming language, packet tracer, gns3, gns3 vm, virtual, virtual box, vmware, workstation, atom, pycharm, visual studio, visual studio code">
+  <meta name="robots" content="INDEX, FOLLOW">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/3d476d9e16.js" crossorigin="anonymous"></script>
+  <title>Ping Intelligence - Inspiring Minds</title>
 </head>
 
-<body>
-    <nav id="navigation">
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+<body onload="currentDateTime()">
+  <div class="topnav" id="myTopNav">
+    <a href="home.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="update.html">Updates</a>
+    <a href="community.html">Community</a>
+    <a href="javascript:void(0);" class="icon" onclick="myResNav()">
+      <i class="fas fa-bars"></i>
+    </a>
+  </div>
+  <section class="firstSection background">
+    <div class="datetime">
+      <p id="home-clock"></p>
+    </div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="number-text">1/4</div>
+        <i class="fab fa-html5 fa-10x fa-align-center"></i>
+        <div class="caption-text">This website is built with HTML5</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="number-text">2/4</div>
+        <i class="fab fa-css3 fa-10x fa-align-center"></i>
+        <div class="caption-text">
+          The styling of this website is done with CSS3
         </div>
-        <ul class="navlist">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="update.html">Updates</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="contactUs.html">Contact Us</a></li>
-        </ul>
-    </nav>
-    <section class="firstSection background">
-        <div class="notes">
-            <p class="web-info">This website is built with:
-                <span class="type-text" data-wait="2000" data-words='["HTML5", "CSS3", "JavaScript", "jQuery"]'></span>
-            </p>
-            <p class="web-warning">The website may not function properly on Internet Explorer and older / outdated versions of browsers.</p>
+      </div>
+      <div class="mySlides fade">
+        <div class="number-text">3/4</div>
+        <i class="fab fa-js-square fa-10x fa-align-center"></i>
+        <div class="caption-text">
+          This website is programmed with JavaScript
         </div>
-        <div class="coming-soon">
-            <div class="count-container">
-                <p class="banner-text">WE ARE COMING SOON!</p>
-                <div class="countdown"></div>
-            </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="number-text">4/4</div>
+        <i class="fab fa-php fa-10x fa-align-center"></i>
+        <div class="caption-text">
+          The server for this website is managed by PHP
         </div>
-        <div class="mainBox">
-            <div class="firstHalf">
-                <p class="text-big">Welcome to Ping Intelligence - <em>Inspiring Minds</em></p>
-                <p class="text-small">From Data Communications & Networking to building and developing a Website,
-                    with
-                    the fun of Programming Languages. There's something of everything here!</p>
-                <p class="text-small">New videos related to Cisco CCNA/CCNP, Kali Linux & Parrot OS, Web development
-                    (HTML5, CSS3, JavaScript & PHP) and Programming languages (Python & Java) will be uploaded every
-                    week.</p>
-                <p class="text-small">The website is under development process and we are continuously working hard
-                    to
-                    make it more better and useful. <strong>We are expected to go live by 9<sup>th</sup> January
-                        2021.</strong></p>
-                <p class="text-small">Stay tuned and connect with us on our social media handles for more updates
-                    and
-                    notifications.</p>
-                <div class="pi-icon-container">
-                    <div class="pi-icon-btn">
-                        <a href="https://fb.me/ping.intelligence" target="_blank">
-                            <i class="fab fa-facebook-square icon-color1"></i>
-                        </a>
-                    </div>
-                    <div class="pi-icon-btn">
-                        <a href="https://twitter.com/ping_intel" target="_blank">
-                            <i class="fab fa-twitter-square icon-color2"></i>
-                        </a>
-                    </div>
-                    <div class="pi-icon-btn">
-                        <a href="https://www.instagram.com/ping.intelligence/" target="_blank">
-                            <i class="fab fa-instagram icon-color3"></i>
-                        </a>
-                    </div>
-                    <div class="pi-icon-btn">
-                        <a href="https://www.youtube.com/channel/UCjqkAEJgjaQJQ88d5mTLLMg" target="_blank">
-                            <i class="fab fa-youtube icon-color4"></i>
-                        </a>
-                    </div>
-                    <div class="pi-icon-btn">
-                        <a href="https://github.com/lalajr-git" target="_blank">
-                            <i class="fab fa-github icon-color5"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="secondHalf">
-                <img src="img/Ping Intelligence - New Logo.gif" alt="Ping Intelligence">
-
-            </div>
-        </div>
-    </section>
-    <section class="secondSection">
-        <div class="info">
-            <p class="name">Javed Siddiqui</p>
-            <p class="bio">Founder of Ping Intelligence | Network Engineer | Web Developer | Programmer</p>
-            <p class="bio">My social-media handles:</p>
-            <div class="icon-container">
-                <div class="icon-btn">
-                    <a href="https://www.facebook.com/lalajr1992" target="_blank">
-                        <i class="fa fa-facebook icon-color1"></i>
-                    </a>
-                </div>
-                <div class="icon-btn">
-                    <a href="https://twitter.com/lalajr92" target="_blank">
-                        <i class="fa fa-twitter icon-color2"></i>
-                    </a>
-                </div>
-                <div class="icon-btn">
-                    <a href="https://www.instagram.com/lalajr_" target="_blank">
-                        <i class="fa fa-instagram icon-color3"></i>
-                    </a>
-                </div>
-                <div class="icon-btn">
-                    <a href="https://www.youtube.com/channel/UC8qk0X5uhihDh3h2EBy5lYw" target="_blank">
-                        <i class="fa fa-youtube icon-color4"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="ourPic">
-            <img src="img/Javed Siddiqui.jpg" alt="Javed Siddiqui">
-        </div>
-    </section>
-    <section class="secondSection left">
-        <div class="info">
-            <p class="name">Mariyam Siddiqui</p>
-            <p class="bio">Co-Founder and Moderator of Ping Intelligence | Digital Artist | Fitness Freak | Yoga |
-                Gaming | Photography</p>
-        </div>
-        <div class="ourPic">
-            <img src="img/Mariyam Siddiqui.jpg" alt="Mariyam Siddiqui">
-        </div>
-    </section>
-    <section class="checkout">
-        <p class="checkout-title">Checkout the following amazing services</p>
-        <div class="pexels">
-            <div class="pexels-info">
-                <p class="pexels-header">Pexels:</p>
-                <p class="pexels-text">The best free stock photos & videos shared by talented creators. Click on the
-                    button below to visit Pexels.</p>
-                <a href="https://www.pexels.com" target="_blank" class="pexels-btn">Visit Now</a>
-                <p class="pexels-text">Photo by cottonbro from Pexels. Discover more on <span><a class="pexels-credits"
-                            href="https://www.instagram.com/cottonbro/" target="_blank"><i class="fa fa-instagram"></i>
-                            Instagram</a></span></p>
-                <p class="pexels-text">Video by cottonbro from Pexels. Discover more on <span><a class="pexels-credits"
-                            href="https://www.instagram.com/cottonbro/" target="_blank"><i class="fa fa-instagram"></i>
-                            Instagram</a></span></p>
-            </div>
-            <!-- <div class="pexels-ad"></div> -->
-            <video src="vid/Production ID_3894701.mp4" autoplay muted loop class="pexels-video"></video>
-        </div>
-        <hr>
-        <div class="font-awesome">
-            <p class="fa-header">Font Awesome:</p>
-            <p class="fa-text">Get vector icons and social logos on your website with Font Awesome, the web's most
-                popular icon set and toolkit.</p>
-            <p class="fa-text">Font Awesome is one of the top open source projects on <span><i
-                        class="fab fa-github"></i></span> GitHub. Font Awesome is the web’s default icon set, and has
-                been used on over 100 Million websites.</p>
-            <p class="fa-text"><span><i class="fas fa-mouse-pointer"></i></span> Click on the button below to visit Font
-                Awesome.</p>
-            <a href="https://fontawesome.com" target="_blank" class="fa-btn">Visit Now</a>
-        </div>
-        <div class="source-unsplash">
-
-        </div>
-    </section>
-    <footer class="footer">
-        <p class="text-footer">
-            Copyright &copy; 2020 Ping Intelligence - All Rights Reserved
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <br />
+      <div class="dots-circles">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+    <div class="coming-soon">
+      <p class="banner-text" id="banner-live">WE ARE COMING SOON!</p>
+      <div id="countdown-timer"></div>
+    </div>
+    <div class="mainBox">
+      <div class="firstHalf">
+        <p class="text-big">
+          Welcome to Ping Intelligence - <em>Inspiring Minds</em>
         </p>
-    </footer>
-    <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
-    <!-- <script>
-        $(document).ready(function () {
-            // Set trigger & container variables
-            var trigger = $('#navigation ul li a'),
-                container = $('#content');
+        <p class="text-small">
+          From Data Communications & Networking, to building and developing a
+          Website, with the fun of Programming Languages. There's something of
+          everything here!
+        </p>
+        <p class="text-small">
+          New videos related to Cisco CCNA/CCNP, Kali Linux, Web
+          development (HTML5, CSS3, JavaScript and PHP) and Programming
+          languages (Python, Java and C++) will be uploaded every week.
+        </p>
+        <p class="text-small">
+          The website is under development process and we are continuously
+          working hard to make it more better and useful.
+          <strong>We are expected to go live by 31<sup>st</sup> August
+            2021.</strong>
+        </p>
+        <p class="text-small">
+          Stay tuned and connect with us on our social media handles for more
+          updates and notifications.
+        </p>
+        <div class="pi-icon-container">
+          <div class="pi-icon-btn">
+            <a href="https://fb.me/ping.intelligence" target="_blank">
+              <i class="fab fa-facebook-square icon-color1"></i>
+            </a>
+          </div>
+          <div class="pi-icon-btn">
+            <a href="https://twitter.com/ping_intel" target="_blank">
+              <i class="fab fa-twitter-square icon-color2"></i>
+            </a>
+          </div>
+          <div class="pi-icon-btn">
+            <a href="https://www.instagram.com/ping.intelligence/" target="_blank">
+              <i class="fab fa-instagram icon-color3"></i>
+            </a>
+          </div>
+          <div class="pi-icon-btn">
+            <a href="https://www.youtube.com/channel/UCjqkAEJgjaQJQ88d5mTLLMg" target="_blank">
+              <i class="fab fa-youtube icon-color4"></i>
+            </a>
+          </div>
+          <div class="pi-icon-btn">
+            <a href="https://github.com/lalajr-git" target="_blank">
+              <i class="fab fa-github icon-color5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="secondHalf">
+        <img src="img/Ping Intelligence - New Logo.gif" alt="Ping Intelligence" />
+      </div>
+    </div>
+  </section>
+  <section class="secondSection">
+    <div class="info">
+      <p class="name">Javed Siddiqui</p>
+      <p class="bio">
+        Network Engineer | Web Developer | Programmer | Cricket Lover | Foodie
+      </p>
+      <p class="bio">My social-media handles:</p>
+      <div class="icon-container">
+        <div class="icon-btn">
+          <a href="https://www.facebook.com/lalajr1992" target="_blank">
+            <i class="fa fa-facebook icon-color1"></i>
+          </a>
+        </div>
+        <div class="icon-btn">
+          <a href="https://twitter.com/lalajr92" target="_blank">
+            <i class="fa fa-twitter icon-color2"></i>
+          </a>
+        </div>
+        <div class="icon-btn">
+          <a href="https://www.instagram.com/lalajr_" target="_blank">
+            <i class="fa fa-instagram icon-color3"></i>
+          </a>
+        </div>
+        <div class="icon-btn">
+          <a href="https://www.youtube.com/channel/UC8qk0X5uhihDh3h2EBy5lYw" target="_blank">
+            <i class="fa fa-youtube icon-color4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="ourPic">
+      <img src="img/Javed Siddiqui.jpg" alt="Javed Siddiqui" />
+    </div>
+  </section>
+  <section class="secondSection left">
+    <div class="info">
+      <p class="name">Mariyam Siddiqui</p>
+      <p class="bio">
+        Digital Artist | Fitness Freak | Yoga | Gaming | Photography
+      </p>
+    </div>
+    <div class="ourPic">
+      <img src="img/Mariyam Siddiqui.jpg" alt="Mariyam Siddiqui" />
+    </div>
+  </section>
+  <section class="checkout">
+    <p class="checkout-title">Checkout the following amazing services</p>
+    <div class="pexels">
+      <div class="pexels-info">
+        <p class="pexels-header">Pexels:</p>
+        <p class="pexels-text">
+          The best free stock photos & videos shared by talented creators.
+          Click on the button below to visit Pexels.
+        </p>
+        <a href="https://www.pexels.com" target="_blank" class="pexels-btn">Visit Now</a>
+        <p class="pexels-text">
+          Photo by cottonbro from Pexels. Discover more on
+          <span><a class="pexels-credits" href="https://www.instagram.com/cottonbro/" target="_blank"><i
+                class="fa fa-instagram"></i> Instagram</a></span>
+        </p>
+        <p class="pexels-text">
+          Video by cottonbro from Pexels. Discover more on
+          <span><a class="pexels-credits" href="https://www.instagram.com/cottonbro/" target="_blank"><i
+                class="fa fa-instagram"></i> Instagram</a></span>
+        </p>
+      </div>
 
-            //Fire on click
-            trigger.on('click', function () {
-                //Set $this for re-use. Set target from data attribute
-                var $this = $(this),
-                    target = $this.data('target');
-
-                //Load target page into container
-                container.load(target + '.html');
-
-                //Stop normal link behaviour
-                return false;
-            });
-        });
-    </script>
-    <noscript>Sorry, your browser does not support JavaScript!</noscript> -->
+      <video src="vid/Dancing_Girl.mp4" autoplay muted loop class="pexels-video"></video>
+    </div>
+    <hr />
+    <div class="font-awesome">
+      <p class="fa-header">Font Awesome:</p>
+      <p class="fa-text">
+        Get vector icons and social logos on your website with Font Awesome,
+        the web's most popular icon set and toolkit.
+      </p>
+      <p class="fa-text">
+        Font Awesome is one of the top open source projects on
+        <span><i class="fab fa-github"></i></span> GitHub. Font Awesome is the
+        web’s default icon set, and has been used on over 100 Million
+        websites.
+      </p>
+      <p class="fa-text">
+        <span><i class="fas fa-mouse-pointer"></i></span> Click on the button
+        below to visit Font Awesome.
+      </p>
+      <a href="https://fontawesome.com" target="_blank" class="fa-btn">Visit Now</a>
+    </div>
+    <!-- <div class="source-unsplash"></div> -->
+  </section>
+  <footer class="footer">
+    <p class="text-footer">
+      Copyright &copy; 2021 Ping Intelligence - All Rights Reserved
+    </p>
+  </footer>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

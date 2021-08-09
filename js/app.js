@@ -1,10 +1,10 @@
-const hamburger = document.querySelector('.hamburger');
-const navList = document.querySelector('.navlist');
-const links = document.querySelectorAll('.navlist li');
-
-hamburger.addEventListener("click", ()=>{
-    navList.classList.toggle("open");
-    links.forEach(link =>{
-        link.classList.toggle("fade");
-    });
-});
+// Toggle between adding and removing the responsive class to the topnav when user clicks the hamburger icon
+function myResNav() {
+    let x = document.getElementById("myTopNav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    }
+    else {
+        x.className = "topnav";
+    }
+}

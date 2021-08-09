@@ -1,101 +1,83 @@
-const countdown = document.querySelector('.countdown');
+// Slideshow
+var slideIndex = 1;
 
-//Set the launch date
-const launchDate = new Date('Jan 9, 2021 18:00:00').getTime();
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
 
-//Update every second
-const interval = setInterval(() => {
-    //Get todays date and time in ms
-    const now = new Date().getTime();
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
 
-    //Distance from now to the launch date
-    const remTime = launchDate - now;
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+showSlides(slideIndex);
 
-    //Time calculations
-    const days = Math.floor(remTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((remTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((remTime % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((remTime % (1000 * 60)) / 1000);
+// Countdown Timer
+// Set the date we are counting down to...
+const launchTime = new Date("August 31, 2021 12:00:00").getTime();
 
-    //Display Results
-    countdown.innerHTML = `
-        <div>${days}<span>DAYS</span></div>
-        <div>${hours}<span>HOURS</span></div>
-        <div>${minutes}<span>MINUTES</span></div>
-        <div>${seconds}<span>SECONDS</span></div>
-    `;
+// Update the countdown every one seconds
+const countDown = setInterval(function () {
+  const currentTime = new Date().getTime();
+  const distance = launchTime - currentTime;
 
-    //If launch date is passed
-    if (remTime < 0) {
-        clearInterval(interval); //Stops the countdown
-        //Style and Output
-        countdown.style.color = '#ffffff';
-        countdown.innerHTML = 'We are finally live now!';
-    }
+  // Time calculations for days, hours, minutes and seconds
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  hours = ("0" + hours).slice(-2);
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  minutes = ("0" + minutes).slice(-2);
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  seconds = ("0" + seconds).slice(-2);
 
+  document.getElementById("countdown-timer").innerHTML = days + " Days" + " | " + hours + " Hours" + " | " + minutes + " Minutes" + " | " + seconds + " Seconds";
+
+  if (distance < 0) {
+    clearInterval(countDown);
+    document.getElementById("banner-live").innerHTML = "Thank you, for your love and support.";
+    document.getElementById("countdown-timer").innerHTML = "We are finally live now!";
+  }
 }, 1000);
 
-const TypeWriter = function(textElement, words, wait=3000){
-    this.textElement = textElement;
-    this.words = words;
-    this.text = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.type();
-    this.isDeleting = false;
-}
+// Display current Date and Time
+function currentDateTime() {
+  let today = new Date();
+  let currentYear = today.getFullYear();
+  let currentMonth = today.getMonth();
+  let presentDate = today.getDate();
+  let presentDay = today.getDay();
+  let daysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let hrs = today.getHours();
+  let am_pm = (hrs >= 12) ? "PM" : "AM";
+  hrs = (hrs > 12) ? hrs - 12 : hrs;
+  
+  let mins = today.getMinutes();
+  let secs = today.getSeconds();
 
-//Type Method
-TypeWriter.prototype.type = function(){
-    //Current index of word
-    const currIndex = this.wordIndex % this.words.length;
-    //Get full text of the current word
-    const fullText = this.words[currIndex];
-    
-    //Check if deleting
-    if(this.isDeleting){
-        //Remove character
-        this.text = fullText.substring(0, this.text.length - 1);
-    } else{
-        //Add character
-        this.text = fullText.substring(0, this.text.length + 1);
-    }
+  hrs = ("0" + hrs).slice(-2);
+  mins = ("0" + mins).slice(-2);
+  secs = ("0" + secs).slice(-2);
 
-    //Insert text into span element
-    this.textElement.innerHTML = `<span class="cursor-effect">${this.text}</span>`;
+  document.getElementById("home-clock").innerHTML = daysArray[presentDay] + ", " + presentDate + "-" + monthArray[currentMonth] + "-" + currentYear + ", " + hrs + ":" + mins + ":" + secs + " " + am_pm;
 
-    //Initial Type Speed
-    let typeSpeed = 300;
-
-    if(this.isDeleting){
-        typeSpeed /= 2;
-    }
-
-    //If the word is complete
-    if(!this.isDeleting && this.text === fullText){
-        //Pause after completion
-        typeSpeed = this.wait;
-        //Also set delete to true
-        this.isDeleting = true;
-    } else if(this.isDeleting && this.text === ''){
-        this.isDeleting = false;
-        //Move to the next word
-        this.wordIndex++;
-        //Briefly pause before start typing again
-        typeSpeed = 500;
-    }
-
-    setTimeout(()=>this.type(), typeSpeed);
-}
-
-//Init on DOM Load
-document.addEventListener('DOMContentLoaded', init);
-//Init App
-function init(){
-    const textElement = document.querySelector('.type-text');
-    const words = JSON.parse(textElement.getAttribute('data-words'));
-    const wait = textElement.getAttribute('data-wait');
-
-    //Init TypeWriter
-    new TypeWriter(textElement, words, wait);
+  setTimeout(currentDateTime, 1000);
 }
