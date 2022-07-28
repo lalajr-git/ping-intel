@@ -32,7 +32,7 @@ showSlides(slideIndex);
 
 // Countdown Timer
 // Set the date we are counting down to...
-const launchTime = new Date("August 31, 2021 12:00:00").getTime();
+const launchTime = new Date("August 12, 2022 12:00:00").getTime();
 
 // Update the countdown every one seconds
 const countDown = setInterval(function () {
